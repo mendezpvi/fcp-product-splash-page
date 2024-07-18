@@ -1,0 +1,165 @@
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+  /* --blue: #050714;
+  --sky-blue: #02B6C5;
+  --white: #F9F9F9;
+  --gray: #BBBBBC;
+  --red: #C11119;
+  --black: #000; */
+
+  --orange-900: #FF7238;
+  --orange-100: #FEA31D;
+  --black-700: #3E3E3E;
+  --white: #FFFFFE;
+}
+
+/* Typography */
+.top-text,
+.bottom-text,
+.subheading {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--orange-900);
+  letter-spacing: 1px;
+}
+.top-text {
+  font-size: .75rem;
+  border-top: 4px solid currentColor;
+  text-shadow: 0 0 1px var(--black-700);
+}
+.bottom-text {
+  font-size: 1.1rem;
+}
+
+.hero-title {
+  font-size: 10vw;
+  font-weight: 300;
+  color: var(--white);
+  text-shadow: 0 0 3px var(--black-700), 0 3px var(--black-700);
+}
+.accent {
+  font-weight: 700;
+}
+.intro-title {
+  margin-bottom: 0;
+  font-size: 1.8rem;
+}
+.paragraph {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Layout */
+.main,
+.hero,
+.intro,
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero,
+.intro {
+  padding: 1em;
+}
+
+.hero {
+  flex-basis: 25rem;
+  justify-content: space-between;
+  background: linear-gradient(to bottom, #00000010 60%, #000000 100%), url('../assets/img/hero.avif') center/cover;
+  text-align: center;
+}
+.intro {
+  text-align: center;
+  color: var(--black-700);
+}
+
+.subheading {
+  margin-top: .5em;
+  text-shadow: 0 0 1px var(--black-700);
+}
+
+/* form */
+.form {
+  margin-top: 1em;
+  inline-size: 100%;
+  max-inline-size: 25rem;
+  gap: .6em;
+}
+input,
+button {
+  padding: .5em;
+  inline-size: 100%;
+  line-height: 2;
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 5px;
+}
+input {
+  font-weight: 500;
+  border: 1px solid var(--black-700);
+}
+button {
+  margin-top: 1em;
+  border: none;
+  color: var(--white);
+  font-weight: 800;
+  text-transform: uppercase;
+  background: linear-gradient(to right, var(--orange-100), var(--orange-900));
+  text-shadow: 0 0 1px var(--black-700);
+  cursor: pointer;
+}
+.disclaimer {
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+button,
+.disclaimer {
+  letter-spacing: 1px;
+}
+
+/* Media Query */
+@media (width >= 765px) {
+  .main {
+    flex-direction: row;
+  }
+  .hero,
+  .intro {
+    min-block-size: 100vh;
+    flex-basis: 50%;
+  }
+  .hero-title {
+    font-size: 3rem;
+  }
+  .intro {
+    margin-inline: auto;
+    max-inline-size: 480px;
+    justify-content: center;
+  }
+}
+
+/* States */
+input:focus-visible {
+  outline: none;
+  border-color: var(--orange-900);
+}
+button:focus-visible {
+  opacity: .75;
+  outline: 2px dotted var(--orange-900);
+  outline-offset: 3px;
+}
+@media (hover:hover) {
+  button:hover {
+    opacity: .75;
+  }
+}
