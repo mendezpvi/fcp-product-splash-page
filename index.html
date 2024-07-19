@@ -36,6 +36,24 @@
   </section>
 </main>
 
+<dialog>
+  <h3>Thanks! 😃</h3>
+  <p>This Splash Page is for practicing "Flexbox"</p>
+</dialog>
+
+<script>
+  const formEl = document.querySelector('.form')
+  const dialogEl = document.querySelector('dialog')
+  formEl.addEventListener("submit", (e) => {
+    e.preventDefault()
+    dialogEl.showModal()
+    setTimeout(() => {
+      dialogEl.close()
+      formEl.reset()
+    }, 3000);
+  })
+</script>
+
 </body>
 
 </html>
