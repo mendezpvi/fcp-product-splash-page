@@ -10,13 +10,6 @@ body {
 }
 
 :root {
-  /* --blue: #050714;
-  --sky-blue: #02B6C5;
-  --white: #F9F9F9;
-  --gray: #BBBBBC;
-  --red: #C11119;
-  --black: #000; */
-
   --orange-900: #FF7238;
   --orange-100: #FEA31D;
   --black-700: #3E3E3E;
@@ -33,14 +26,15 @@ body {
   letter-spacing: 1px;
 }
 .top-text {
+  margin-top: 0;
   font-size: .75rem;
   border-top: 4px solid currentColor;
-  text-shadow: 0 0 1px var(--black-700);
+  text-shadow: 0 1px var(--black-700), 1px 0 var(--white);
 }
 .bottom-text {
+  margin-bottom: 0;
   font-size: 1.1rem;
 }
-
 .hero-title {
   font-size: 10vw;
   font-weight: 300;
@@ -53,6 +47,10 @@ body {
 .intro-title {
   margin-bottom: 0;
   font-size: 1.8rem;
+}
+.subheading {
+  margin-top: .5em;
+  text-shadow: 0 1px var(--black-700), 1px 0 var(--black-700);
 }
 .paragraph {
   font-size: 18px;
@@ -72,7 +70,6 @@ body {
 .intro {
   padding: 1em;
 }
-
 .hero {
   flex-basis: 25rem;
   justify-content: space-between;
@@ -82,11 +79,6 @@ body {
 .intro {
   text-align: center;
   color: var(--black-700);
-}
-
-.subheading {
-  margin-top: .5em;
-  text-shadow: 0 0 1px var(--black-700);
 }
 
 /* form */
@@ -138,16 +130,18 @@ dialog {
   color: var(--white);
   text-align: center;
   text-shadow: 0 2px var(--black-700);
+  outline: none;
 }
 dialog::backdrop {
   background-color: red;
-  background-color: #00000095;
+  background-color: #000000e6;
 }
 
 /* Media Query */
 @media (width >= 765px) {
   .main {
     flex-direction: row;
+    align-items: stretch;
   }
   .hero,
   .intro {
